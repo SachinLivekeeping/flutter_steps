@@ -613,6 +613,8 @@ class _FlutterStepsState extends State<FlutterSteps> {
                   fontSize: widget.titleFontSize ?? widget.leadingSize / 2,
                   color:
                       step.isActive ? _titleActiveColor : _titleInactiveColor,
+                                fontWeight:
+                      step.isActive ? FontWeight.w600: FontWeight.normal,
                 ),
       ),
     );
