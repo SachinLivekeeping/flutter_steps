@@ -589,14 +589,14 @@ class _FlutterStepsState extends State<FlutterSteps> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           _leadingWidget(step, i),
-          _titleWidgetStepHorizontal(step),
+          _titleWidgetStepHorizontal(step, i),
           _subtitleWidgetStepHorizontal(step),
         ],
       ),
     );
   }
 
-  Widget _titleWidgetStepHorizontal(Steps step) {
+  Widget _titleWidgetStepHorizontal(Steps step,int i) {
     if (step.title == null) {
       return const SizedBox.shrink();
     }
@@ -614,7 +614,7 @@ class _FlutterStepsState extends State<FlutterSteps> {
                   color:
                       step.isActive ? _titleActiveColor : _titleInactiveColor,
                                 fontWeight:
-                      step.isActive ? FontWeight.w600: FontWeight.normal,
+                      step.isActive || i == 0 ? FontWeight.w600: FontWeight.normal,
                 ),
       ),
     );
